@@ -1,0 +1,3 @@
+DATABASE_URL: "postgres://conflux:conflux@localhost:5432/conify-test"
+CONFLUX_USERNAME: "myservice"
+CONFLUX_PASSWORD: "cc002cfa52c69ce4"
