@@ -19,6 +19,6 @@
 /Gemfile.lock
 /.idea
 /*.log
-
+/config/application.yml
 /conflux-manifest.json
 

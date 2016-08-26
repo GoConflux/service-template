@@ -15,8 +15,8 @@ class ResourcesController < ApplicationController
       configs: [
         {
           name: 'MYSERVICE_URL',
-          value: 'url',
-          description: 'Description of this config var'
+          value: resource.url,
+          description: 'Config var description'
         }
       ]
     }
