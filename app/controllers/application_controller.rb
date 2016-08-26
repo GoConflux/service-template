@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
 
   def validate_creds
     auth = Rack::Auth::Basic::Request.new(request.env)
