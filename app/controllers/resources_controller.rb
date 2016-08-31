@@ -12,13 +12,9 @@ class ResourcesController < ApplicationController
 
     render json: {
       id: resource.uuid,
-      configs: [
-        {
-          name: 'MYSERVICE_URL',
-          value: resource.url,
-          description: 'Config var description'
-        }
-      ]
+      config: {
+        'MYSERVICE_URL' => generate_url
+      }
     }
   end
 
