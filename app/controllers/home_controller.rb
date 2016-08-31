@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def sso
-    pre_token = "#{params[:uuid]}:#{ENV['CONFLUX_SSO_SALT']}:#{params[:timestamp]}"
+    pre_token = "#{params[:id]}:#{ENV['CONFLUX_SSO_SALT']}:#{params[:timestamp]}"
     token = Digest::SHA1.hexdigest(pre_token).to_s
 
     if token != params[:token] || params[:timestamp].to_i < (Time.now - 2*60).to_i
@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       return
     end
 
-    resource = Resource.find_by(uuid: params[:uuid])
+    resource = Resource.find_by(uuid: params[:id])
 
     if resource.nil?
       render json: { message: 'Resource not found' }, status: 404
