@@ -13,7 +13,7 @@ class ResourcesController < ApplicationController
     render json: {
       id: resource.uuid,
       config: {
-        'MYSERVICE_URL' => generate_url
+        'FAKE_SERVICE_URL' => generate_url
       }
     }
   end
